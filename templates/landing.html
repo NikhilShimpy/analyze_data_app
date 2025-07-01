@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChartMaster - Visualize Your Data</title>
+  <link rel="stylesheet" href="\static\landing.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">ChartMaster</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#footer">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="animated-text" id="targetHeading">Bring Your Data to Life</h1>
+      <div class="cta-buttons">
+        <button onclick="location.href='/basic'">Basic Charts</button>
+        <button onclick="location.href='/advanced'">Advanced Charts</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="feature-card" data-aos="fade-up">
+      <h3>Upload Your Data</h3>
+      <p>Easily upload CSV, JSON, or Excel files to get started.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+      <h3>Visualize Instantly</h3>
+      <p>Generate beautiful charts with just a few clicks.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+      <h3>Customize Your Charts</h3>
+      <p>Choose colors, styles, and chart types to suit your needs.</p>
+    </div>
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+      <h3>Download Results</h3>
+      <p>Export your charts as high-quality images or PDFs.</p>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <p>Join our community by using our services and grow your business.</p>
+      <button id="targetHeading" class="cta-button">Try it For Free</button>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <div class="footer-section">
+        <h2>Adex</h2>
+        <p>&copy; 2022 codewithsadee.<br>All rights reserved.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <p>Moonshine St. 14/05<br>Light City, London,<br>United Kingdom</p>
+        <p>info@email.com<br>00 (123) 456 78 90</p>
+      </div>
+      <div class="footer-section">
+        <h3>Learn More</h3>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Our Story</a></p>
+        <p><a href="#">Projects</a></p>
+        <p><a href="#">Terms of Use</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Our Newsletter</h3>
+        <p>Subscribe to our newsletter to get our news & deals delivered to you.</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Email Address">
+          <button>Join</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.getElementById('ctaButton').addEventListener('click', function() {
+    document.getElementById('targetHeading').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="static\landing.js"></script>
+</body>
+</html>

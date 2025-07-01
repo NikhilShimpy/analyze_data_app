@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AnalyzeData</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-xl mx-auto bg-white p-4 rounded shadow">
+    <h1 class="text-2xl font-bold mb-4">Upload File & Generate Chart</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" name="file" class="mb-2 block">
+      <input type="text" name="chart_type" placeholder="Chart Type (barplot, heatmap, etc)" class="mb-2 block border p-1 w-full">
+      <input type="text" name="x_col" placeholder="X Column (optional)" class="mb-2 block border p-1 w-full">
+      <input type="text" name="y_col" placeholder="Y Column (optional)" class="mb-2 block border p-1 w-full">
+      <button type="submit" class="bg-blue-500 text-white px-3 py-1 rounded">Upload & Generate</button>
+    </form>
+
+    <div id="result" class="mt-4"></div>
+  </div>
+
+   <script>
+    document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const res = await fetch('/basic', { method: 'POST', body: formData });
+      const data = await res.json();
+
+      if (data.error) {
+        console.error(data.error);
+        document.getElementById('result').innerHTML = `<p class="text-red-500">${data.error}</p>`;
+      } else {
+        document.getElementById('result').innerHTML = `
+          <img src="${data.chart_url}" class="mt-2 border">
+          <a href="${data.download_url}" class="block mt-2 bg-green-500 text-white px-3 py-1 rounded" download>Download Chart</a>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

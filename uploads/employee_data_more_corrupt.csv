@@ -1,0 +1,51 @@
+id,name,salary,department,age,mob_number,city,experience,score
+1,Employee_1,-10000.0,Engineering,35,9123456789,New York,10.0,100.0
+2,Employee_2,,Engineering,25,9123456789,Houston,5.0,100.0
+3,Employee_3,70000.0,HR,35,9876543210,New York,,
+4,Employee_4,,Engineering,45,9123456789,,-2.0,inf
+5,Employee_5,,,30,9876543210,New York,5.0,80.0
+1,Employee_1,-10000.0,Engineering,35,9123456789,Los Angeles,10.0,
+7,Employee_7,70000.0,Marketing,25,9123456789,Houston,10.0,100.0
+8,Employee_8,70000.0,Marketing,40,9988776655,Houston,5.0,80.0
+9,Employee_9,70000.0,Marketing,25,9988776655,,10.0,
+10,Employee_10,,Marketing,40,9988776655,,5.0,inf
+11,Employee_11,-99999.0,,30,9988776655,Los Angeles,3.0,
+12,Employee_12,70000.0,Sales,25,9988776655,Chicago,5.0,inf
+13,Employee_13,inf,HR,,9123456789,New York,inf,100.0
+14,Employee_14,,Marketing,45,9123456789,,5.0,inf
+15,Employee_15,60000.0,Engineering,35,nan,New York,10.0,80.0
+16,Employee_16,inf,Marketing,40,9988776655,New York,inf,100.0
+17,Employee_17,inf,Engineering,,9123456789,Chicago,10.0,80.0
+18,Employee_18,inf,Engineering,35,nan,New York,1.0,-1.0
+19,Employee_19,60000.0,Marketing,35,9988776655,Los Angeles,1.0,90.0
+20,Employee_20,-10000.0,,25,9876543210,Los Angeles,inf,inf
+21,Employee_21,,Engineering,35,nan,Houston,3.0,90.0
+22,Employee_22,50000.0,Engineering,45,9123456789,,1.0,90.0
+23,Employee_23,-10000.0,Marketing,,9876543210,,5.0,inf
+24,Employee_24,60000.0,Engineering,35,9876543210,,10.0,100.0
+25,Employee_25,inf,Engineering,25,9876543210,New York,1.0,-1.0
+26,Employee_26,,,45,nan,New York,1.0,80.0
+27,Employee_27,-10000.0,Marketing,30,9123456789,Chicago,3.0,
+28,Employee_28,50000.0,HR,,9876543210,,inf,80.0
+29,Employee_29,50000.0,,35,9988776655,Los Angeles,inf,
+30,Employee_30,70000.0,,25,9876543210,,,80.0
+31,Employee_31,70000.0,Engineering,,9876543210,Houston,3.0,inf
+32,Employee_32,60000.0,,30,nan,Los Angeles,5.0,-1.0
+33,Employee_33,-10000.0,Engineering,40,nan,,inf,
+34,Employee_34,-10000.0,HR,45,9123456789,,10.0,100.0
+35,Employee_35,inf,Marketing,35,9988776655,Houston,3.0,80.0
+36,Employee_2,inf,Marketing,25,nan,,1.0,80.0
+37,Employee_37,inf,Marketing,40,9876543210,Chicago,10.0,
+38,Employee_38,70000.0,,45,9123456789,Chicago,10.0,100.0
+39,Employee_39,-10000.0,HR,40,9876543210,New York,1.0,100.0
+40,Employee_40,-10000.0,,,9876543210,,3.0,inf
+11,Employee_11,-99999.0,,30,9988776655,Los Angeles,3.0,
+42,Employee_42,70000.0,HR,45,9123456789,,,inf
+43,Employee_43,,HR,35,9988776655,Houston,10.0,inf
+44,Employee_44,70000.0,HR,45,9988776655,Los Angeles,-2.0,inf
+45,Employee_45,,HR,40,nan,,-2.0,inf
+46,Employee_46,50000.0,Marketing,45,nan,,5.0,
+47,Employee_47,60000.0,Sales,35,9123456789,Chicago,inf,100.0
+48,Employee_48,-10000.0,Sales,35,9988776655,,-5.0,inf
+49,Employee_49,50000.0,HR,,9988776655,,1.0,100.0
+50,Employee_50,-10000.0,Sales,40,9988776655,New York,5.0,inf
