@@ -58,6 +58,9 @@ def generate_chart(df, chart_type, x_col=None, y_col=None):
 def landing():
     return render_template('landing.html')
 
+@app.route('/features')
+def features():
+    return render_template('feature.html')
 @app.route('/basic', methods=['GET', 'POST'])
 def basic():
     if request.method == 'POST':
@@ -99,7 +102,3 @@ def download(filename):
 if __name__ == '__main__':
     app.run(debug=True)
 
-# hey harsh 
-# nikhils weds anushka
-
-# andi mandi sandi 

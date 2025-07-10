@@ -4,99 +4,512 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ChartMaster - Visualize Your Data</title>
-  <link rel="stylesheet" href="\static\landing.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/landing.css">
 </head>
 <body>
-  <header>
-    <div class="logo">ChartMaster</div>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#footer">Contact</a>
-    </nav>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="loader-bar"></div>
+      <div class="loader-bar"></div>
+      <div class="loader-bar"></div>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top animate__animated">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Floating Action Buttons -->
+  <div class="fab-container">
+    <div class="fab fab-main animate__animated animate__pulse animate__infinite">
+      <i class="fas fa-magic"></i>
+    </div>
+    <div class="fab-sub-buttons">
+      <button class="fab-sub-btn tooltip" data-tooltip="Support">
+        <i class="fas fa-headset"></i>
+      </button>
+      <button class="fab-sub-btn tooltip" data-tooltip="Chat">
+        <i class="fas fa-comment-dots"></i>
+      </button>
+      <button class="fab-sub-btn tooltip" data-tooltip="Feedback">
+        <i class="fas fa-comment-alt"></i>
+      </button>
+    </div>
+  </div>
+
+  <header class="sticky-header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <div class="logo animate__animated animate__fadeInLeft">
+        <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
+        <span class="logo-text">ChartMaster</span>
+      </div>
+
+      <!-- Navigation + Buttons -->
+      <nav class="main-nav">
+        <ul>
+          <a href="{{ url_for('features') }}" class="nav-link hover-underline">Features</a>
+
+          <li><a href="#pricing" class="nav-link hover-underline">Pricing</a></li>
+          <li><a href="#testimonials" class="nav-link hover-underline">Testimonials</a></li>
+          <li><a href="#footer" class="nav-link hover-underline">Contact</a></li>
+          <li><button class="btn-login animate__animated animate__fadeIn">Login</button></li>
+          <li><button class="btn-signup animate__animated animate__fadeIn">Sign Up</button></li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger for mobile -->
+      <button class="hamburger-menu animate__animated animate__fadeInRight">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </header>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <div class="user-profile">
+        <div class="avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="user-info">
+          <span class="greeting">Hello, Guest</span>
+          <a href="#" class="login-link">Login / Register</a>
+        </div>
+      </div>
+      <button class="close-menu"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="#features" class="mobile-nav-link">Features</a></li>
+        <li><a href="#pricing" class="mobile-nav-link">Pricing</a></li>
+        <li><a href="#testimonials" class="mobile-nav-link">Testimonials</a></li>
+        <li><a href="#footer" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="social-links-mobile">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+
   <section class="hero">
-    <div class="hero-content">
-      <h1 class="animated-text" id="targetHeading">Bring Your Data to Life</h1>
-      <div class="cta-buttons">
-        <button onclick="location.href='/basic'">Basic Charts</button>
-        <button onclick="location.href='/advanced'">Advanced Charts</button>
+    <div class="hero-particles" id="particles-js"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title animate__animated animate__fadeInDown">
+          <span class="typing-text" data-text='["Bring Your Data to Life", "Visualize With Ease", "Create Stunning Charts", "Tell Your Data Story"]'></span>
+        </h1>
+        <p class="hero-subtitle animate__animated animate__fadeIn animate__delay-1s">Transform your raw data into beautiful, interactive visualizations with just a few clicks.</p>
+        
+        <div class="cta-buttons animate__animated animate__fadeInUp animate__delay-1s">
+          <button class="btn-primary btn-glow" onclick="location.href='/basic'">
+            <span> Basic Charts </span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="btn-secondary btn-glow" onclick="location.href='/advanced'">
+            <span>Advanced Charts</span>
+            <i class="fas fa-chart-bar"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-image animate__animated animate__fadeInRight animate__delay-1s">
+        <div class="floating-chart">
+          <div class="chart-container">
+            <div class="chart-bar" style="height: 30%; animation-delay: 0.1s;"></div>
+            <div class="chart-bar" style="height: 60%; animation-delay: 0.2s;"></div>
+            <div class="chart-bar" style="height: 45%; animation-delay: 0.3s;"></div>
+            <div class="chart-bar" style="height: 80%; animation-delay: 0.4s;"></div>
+            <div class="chart-bar" style="height: 55%; animation-delay: 0.5s;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="scroll-down animate__animated animate__bounce animate__infinite animate__delay-2s">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <section class="features" id="features" style="background: white; padding: 80px 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div class="section-header" data-aos="fade-up" style="text-align: center; margin-bottom: 60px;">
+        <h2 class="section-title" style="font-size: 2.5rem; color: #212529; position: relative; display: inline-block; margin-bottom: 10px;">
+          Powerful Features
+          <span style="display: block; width: 80px; height: 4px; background: linear-gradient(to right, #4361ee, #4895ef); border-radius: 2px; margin: 10px auto 0;"></span>
+        </h2>
+        <p class="section-subtitle" style="font-size: 1.1rem; color: #6c757d; max-width: 700px; margin: 0 auto;">Everything you need to create stunning data visualizations</p>
+      </div>
+
+      <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px;">
+        <!-- Feature Card 1 -->
+        <div class="feature-card" data-aos="fade-up" style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; transition: 0.3s;">
+          <div class="feature-icon pulse" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(67, 97, 238, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #4361ee; margin-bottom: 20px;">
+            <i class="fas fa-file-upload"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Upload Your Data</h3>
+          <p style="color: #6c757d;">Easily upload CSV, JSON, or Excel files to get started.</p>
+          <div class="feature-badge" style="position: absolute; top: 20px; right: 20px; background: #4361ee; color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;">New</div>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100" style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; transition: 0.3s;">
+          <div class="feature-icon pulse" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(67, 97, 238, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #4361ee; margin-bottom: 20px;">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Visualize Instantly</h3>
+          <p style="color: #6c757d;">Generate charts with a few clicks from dozens of styles.</p>
+          <div class="feature-badge" style="position: absolute; top: 20px; right: 20px; background: #4361ee; color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;">Popular</div>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200" style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; transition: 0.3s;">
+          <div class="feature-icon pulse" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(67, 97, 238, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #4361ee; margin-bottom: 20px;">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Customize Charts</h3>
+          <p style="color: #6c757d;">Pick colors, chart types, and styles to suit your needs.</p>
+        </div>
+
+        <!-- Feature Card 4 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300" style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; transition: 0.3s;">
+          <div class="feature-icon pulse" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(67, 97, 238, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #4361ee; margin-bottom: 20px;">
+            <i class="fas fa-file-download"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Download Results</h3>
+          <p style="color: #6c757d;">Export as high-quality images, PDFs, or HTML charts.</p>
+        </div>
+
+        <!-- Feature Card 5 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400" style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; transition: 0.3s;">
+          <div class="feature-icon pulse" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(67, 97, 238, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #4361ee; margin-bottom: 20px;">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Team Collaboration</h3>
+          <p style="color: #6c757d;">Work with teammates on shared chart projects in real time.</p>
+          <div class="feature-badge" style="position: absolute; top: 20px; right: 20px; background: #4361ee; color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase;">Beta</div>
+        </div>
+
+        <!-- Feature Card 6 -->
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="500" style="background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; transition: 0.3s;">
+          <div class="feature-icon pulse" style="width: 60px; height: 60px; border-radius: 50%; background: rgba(67, 97, 238, 0.1); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #4361ee; margin-bottom: 20px;">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Responsive Design</h3>
+          <p style="color: #6c757d;">Your charts look great on phones, tablets, and desktops.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="features" id="features">
-    <div class="feature-card" data-aos="fade-up">
-      <h3>Upload Your Data</h3>
-      <p>Easily upload CSV, JSON, or Excel files to get started.</p>
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Simple Pricing</h2>
+        <p class="section-subtitle">Choose the plan that fits your needs</p>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="pricing-switcher" data-aos="fade-up">
+        <span>Monthly</span>
+        <label class="switch">
+          <input type="checkbox" id="pricingToggle">
+          <span class="slider round"></span>
+        </label>
+        <span>Yearly <span class="discount-badge">Save 20%</span></span>
+      </div>
+      
+      <div class="pricing-cards">
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="pricing-header">
+            <h3>Starter</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount monthly">9</span>
+              <span class="amount yearly">7</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="billed-yearly">Billed as $84 yearly</p>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Basic chart types</li>
+            <li><i class="fas fa-check"></i> 10 projects</li>
+            <li><i class="fas fa-check"></i> 1GB storage</li>
+            <li><i class="fas fa-check"></i> Email support</li>
+            <li><i class="fas fa-times"></i> Advanced customization</li>
+            <li><i class="fas fa-times"></i> Team collaboration</li>
+          </ul>
+          <button class="btn-pricing">Get Started</button>
+        </div>
+        
+        <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+          <div class="popular-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>Professional</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount monthly">29</span>
+              <span class="amount yearly">23</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="billed-yearly">Billed as $276 yearly</p>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> All chart types</li>
+            <li><i class="fas fa-check"></i> Unlimited projects</li>
+            <li><i class="fas fa-check"></i> 10GB storage</li>
+            <li><i class="fas fa-check"></i> Priority support</li>
+            <li><i class="fas fa-check"></i> Advanced customization</li>
+            <li><i class="fas fa-check"></i> Basic team features</li>
+          </ul>
+          <button class="btn-pricing">Get Started</button>
+        </div>
+        
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pricing-header">
+            <h3>Enterprise</h3>
+            <div class="price">
+              <span class="currency">$</span>
+              <span class="amount monthly">99</span>
+              <span class="amount yearly">79</span>
+              <span class="period">/month</span>
+            </div>
+            <p class="billed-yearly">Billed as $948 yearly</p>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> All features</li>
+            <li><i class="fas fa-check"></i> Unlimited projects</li>
+            <li><i class="fas fa-check"></i> 100GB storage</li>
+            <li><i class="fas fa-check"></i> 24/7 support</li>
+            <li><i class="fas fa-check"></i> Full customization</li>
+            <li><i class="fas fa-check"></i> Advanced team features</li>
+          </ul>
+          <button class="btn-pricing">Contact Sales</button>
+        </div>
+      </div>
     </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <h3>Visualize Instantly</h3>
-      <p>Generate beautiful charts with just a few clicks.</p>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">What Our Users Say</h2>
+        <p class="section-subtitle">Trusted by data professionals worldwide</p>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="testimonial-slider" data-aos="fade-up">
+        <div class="testimonial-slides">
+          <div class="testimonial-slide active">
+            <div class="testimonial-content">
+              <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+              <p>ChartMaster has completely transformed how we present data to our clients. The customization options are incredible and the learning curve was minimal.</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson">
+                </div>
+                <div class="author-info">
+                  <h4>Sarah Johnson</h4>
+                  <span>Data Analyst, TechCorp</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+              <p>As a researcher, I need to create publication-quality visualizations quickly. ChartMaster saves me hours of work with its intuitive interface and beautiful templates.</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                </div>
+                <div class="author-info">
+                  <h4>Michael Chen</h4>
+                  <span>Research Scientist, University</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+              <p>The team collaboration features have been a game-changer for our marketing department. We can now work on data visualizations together in real-time.</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">
+                  <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez">
+                </div>
+                <div class="author-info">
+                  <h4>Emily Rodriguez</h4>
+                  <span>Marketing Director, BrandCo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      
+      <div class="trusted-by" data-aos="fade-up">
+        <p>Trusted by leading companies worldwide</p>
+        <div class="company-logos">
+          <div class="logo-item"><i class="fab fa-google"></i></div>
+          <div class="logo-item"><i class="fab fa-microsoft"></i></div>
+          <div class="logo-item"><i class="fab fa-amazon"></i></div>
+          <div class="logo-item"><i class="fab fa-apple"></i></div>
+          <div class="logo-item"><i class="fab fa-spotify"></i></div>
+        </div>
+      </div>
     </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <h3>Customize Your Charts</h3>
-      <p>Choose colors, styles, and chart types to suit your needs.</p>
-    </div>
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-      <h3>Download Results</h3>
-      <p>Export your charts as high-quality images or PDFs.</p>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content" data-aos="fade-up">
+        <h2>Ready to Transform Your Data?</h2>
+        <p>Join thousands of professionals who are already creating stunning visualizations with ChartMaster.</p>
+        <div class="cta-buttons">
+          <button class="btn-primary btn-glow">
+            <span>Start Free Trial</span>
+            <i class="fas fa-rocket"></i>
+          </button>
+          <button class="btn-secondary btn-glow">
+            <span>Schedule Demo</span>
+            <i class="fas fa-calendar-alt"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
   <footer class="footer" id="footer">
-    <div class="footer-top">
-      <p>Join our community by using our services and grow your business.</p>
-      <button id="targetHeading" class="cta-button">Try it For Free</button>
-    </div>
-    <hr>
-    <div class="footer-bottom">
-      <div class="footer-section">
-        <h2>Adex</h2>
-        <p>&copy; 2022 codewithsadee.<br>All rights reserved.</p>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-dribbble"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-newsletter" data-aos="fade-up">
+          <h3>Subscribe to Our Newsletter</h3>
+          <p>Get the latest updates, tips, and offers delivered to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address">
+            <button type="submit" class="btn-newsletter">
+              <span>Subscribe</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
         </div>
       </div>
-      <div class="footer-section">
-        <h3>Get in Touch</h3>
-        <p>Moonshine St. 14/05<br>Light City, London,<br>United Kingdom</p>
-        <p>info@email.com<br>00 (123) 456 78 90</p>
+      
+      <div class="footer-middle">
+        <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+          <div class="footer-logo">
+            <span class="logo-icon"><i class="fas fa-chart-line"></i></span>
+            <span class="logo-text">ChartMaster</span>
+          </div>
+          <p>Empowering businesses and individuals to tell compelling stories through data visualization.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Templates</a></li>
+            <li><a href="#">Integrations</a></li>
+            <li><a href="#">Roadmap</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column" data-aos="fade-up" data-aos-delay="500">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Live Chat</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Status</a></li>
+            <li><a href="#">Contact Support</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-section">
-        <h3>Learn More</h3>
-        <p><a href="#">About Us</a></p>
-        <p><a href="#">Our Story</a></p>
-        <p><a href="#">Projects</a></p>
-        <p><a href="#">Terms of Use</a></p>
-        <p><a href="#">Privacy Policy</a></p>
-      </div>
-      <div class="footer-section">
-        <h3>Our Newsletter</h3>
-        <p>Subscribe to our newsletter to get our news & deals delivered to you.</p>
-        <div class="newsletter">
-          <input type="email" placeholder="Email Address">
-          <button>Join</button>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright" data-aos="fade-up">
+          <p>&copy; 2023 ChartMaster. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script>
-  document.getElementById('ctaButton').addEventListener('click', function() {
-    document.getElementById('targetHeading').scrollIntoView({ behavior: 'smooth' });
-  });
-</script>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
-
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- AOS Animations -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="static\landing.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+  <!-- Your custom JS -->
+  <script src="/static/landing.js"></script>
+
+  <!-- AOS Init -->
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

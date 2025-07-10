@@ -10,7 +10,14 @@
     <h1 class="text-2xl font-bold mb-4">Upload File & Generate Chart</h1>
     <form id="uploadForm" enctype="multipart/form-data">
       <input type="file" name="file" class="mb-2 block">
-      <input type="text" name="chart_type" placeholder="Chart Type (barplot, heatmap, etc)" class="mb-2 block border p-1 w-full">
+      <select name="chart_type" class="mb-2 block border p-1 w-full">
+    <option value="barplot">Bar Plot</option>
+    <option value="countplot">Count Plot</option>
+    <option value="boxplot">Box Plot</option>
+    <option value="heatmap">Heatmap</option>
+    <option value="scatterplot">Scatter Plot</option>
+    <option value="histplot">Histogram</option>
+  </select>
       <input type="text" name="x_col" placeholder="X Column (optional)" class="mb-2 block border p-1 w-full">
       <input type="text" name="y_col" placeholder="Y Column (optional)" class="mb-2 block border p-1 w-full">
       <button type="submit" class="bg-blue-500 text-white px-3 py-1 rounded">Upload & Generate</button>
