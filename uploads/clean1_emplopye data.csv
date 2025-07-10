@@ -1,0 +1,51 @@
+id,name,salary,department,age,mob_number,city,experience,score
+1,Employee_1,28484,Engineering,35,9123456789,New York,10,90
+2,Employee_2,28484,Engineering,25,9123456789,Houston,5,100
+3,Employee_3,70000,HR,35,9876543210,New York,5,90
+4,Employee_4,28484,Engineering,45,9123456789,nasrullaganj,5,90
+5,Employee_5,28484,unknown,30,9876543210,New York,5,80
+1,Employee_1,28484,Engineering,35,9123456789,Los Angeles,10,90
+7,Employee_7,70000,Marketing,25,9123456789,Houston,10,100
+8,Employee_8,70000,Marketing,40,9988776655,Houston,5,80
+9,Employee_9,70000,Marketing,25,9988776655,nasrullaganj,10,90
+10,Employee_10,28484,Marketing,40,9988776655,nasrullaganj,5,90
+11,Employee_11,28484,unknown,30,9988776655,Los Angeles,3,90
+12,Employee_12,70000,Sales,25,9988776655,Chicago,5,90
+13,Employee_13,28484,HR,35,9123456789,New York,5,100
+14,Employee_14,28484,Marketing,45,9123456789,nasrullaganj,5,90
+15,Employee_15,60000,Engineering,35,0,New York,10,80
+16,Employee_16,28484,Marketing,40,9988776655,New York,5,100
+17,Employee_17,28484,Engineering,35,9123456789,Chicago,10,80
+18,Employee_18,28484,Engineering,35,0,New York,1,90
+19,Employee_19,60000,Marketing,35,9988776655,Los Angeles,1,90
+20,Employee_20,28484,unknown,25,9876543210,Los Angeles,5,90
+21,Employee_21,28484,Engineering,35,0,Houston,3,90
+22,Employee_22,50000,Engineering,45,9123456789,nasrullaganj,1,90
+23,Employee_23,28484,Marketing,35,9876543210,nasrullaganj,5,90
+24,Employee_24,60000,Engineering,35,9876543210,nasrullaganj,10,100
+25,Employee_25,28484,Engineering,25,9876543210,New York,1,90
+26,Employee_26,28484,unknown,45,0,New York,1,80
+27,Employee_27,28484,Marketing,30,9123456789,Chicago,3,90
+28,Employee_28,50000,HR,35,9876543210,nasrullaganj,5,80
+29,Employee_29,50000,unknown,35,9988776655,Los Angeles,5,90
+30,Employee_30,70000,unknown,25,9876543210,nasrullaganj,5,80
+31,Employee_31,70000,Engineering,35,9876543210,Houston,3,90
+32,Employee_32,60000,unknown,30,0,Los Angeles,5,90
+33,Employee_33,28484,Engineering,40,0,nasrullaganj,5,90
+34,Employee_34,28484,HR,45,9123456789,nasrullaganj,10,100
+35,Employee_35,28484,Marketing,35,9988776655,Houston,3,80
+36,Employee_2,28484,Marketing,25,0,nasrullaganj,1,80
+37,Employee_37,28484,Marketing,40,9876543210,Chicago,10,90
+38,Employee_38,70000,unknown,45,9123456789,Chicago,10,100
+39,Employee_39,28484,HR,40,9876543210,New York,1,100
+40,Employee_40,28484,unknown,35,9876543210,nasrullaganj,3,90
+11,Employee_11,28484,unknown,30,9988776655,Los Angeles,3,90
+42,Employee_42,70000,HR,45,9123456789,nasrullaganj,5,90
+43,Employee_43,28484,HR,35,9988776655,Houston,10,90
+44,Employee_44,70000,HR,45,9988776655,Los Angeles,5,90
+45,Employee_45,28484,HR,40,0,nasrullaganj,5,90
+46,Employee_46,50000,Marketing,45,0,nasrullaganj,5,90
+47,Employee_47,60000,Sales,35,9123456789,Chicago,5,100
+48,Employee_48,28484,Sales,35,9988776655,nasrullaganj,5,90
+49,Employee_49,50000,HR,35,9988776655,nasrullaganj,1,100
+50,Employee_50,28484,Sales,40,9988776655,New York,5,90

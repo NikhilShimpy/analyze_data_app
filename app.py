@@ -26,27 +26,50 @@ def generate_chart(df, chart_type, x_col=None, y_col=None):
     chart_filename = f"{chart_type}_{x_col or 'none'}_{y_col or 'none'}.png".replace(" ", "_")
     chart_path = os.path.join(CHART_FOLDER, chart_filename)
 
+    # Set Seaborn style
+    sns.set_theme(style="whitegrid")
+
+    # Create figure
     plt.figure(figsize=(10, 6))
 
     try:
+        # Chart generation based on type
         if chart_type == 'barplot':
-            sns.barplot(data=df, x=x_col, y=y_col)
+            sns.barplot(data=df, x=x_col, y=y_col, palette="pastel")
+            plt.xlabel(x_col)
+            plt.ylabel(y_col)
         elif chart_type == 'countplot':
-            sns.countplot(data=df, x=x_col)
+            sns.countplot(data=df, x=x_col, palette="Set2")
+            plt.xlabel(x_col)
+            plt.ylabel("Count")
         elif chart_type == 'boxplot':
-            sns.boxplot(data=df, x=x_col, y=y_col)
+            sns.boxplot(data=df, x=x_col, y=y_col, palette="coolwarm")
+            plt.xlabel(x_col)
+            plt.ylabel(y_col)
         elif chart_type == 'heatmap':
-            sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+            sns.heatmap(df.corr(), annot=True, cmap='coolwarm', linewidths=0.5)
         elif chart_type == 'scatterplot':
-            sns.scatterplot(data=df, x=x_col, y=y_col)
-        else:
-            sns.histplot(data=df, x=x_col)
+            sns.scatterplot(data=df, x=x_col, y=y_col, color='blue', edgecolor='black')
+            plt.xlabel(x_col)
+            plt.ylabel(y_col)
+        else:  # default to histplot
+            sns.histplot(data=df, x=x_col, bins=20, kde=True, color='skyblue')
+            plt.xlabel(x_col)
+            plt.ylabel("Frequency")
 
+        # Add title
+        title = f"{chart_type.title()} of {y_col} vs {x_col}" if y_col else f"{chart_type.title()} of {x_col}"
+        plt.title(title, fontsize=14)
+
+        # Final layout tweaks
         plt.tight_layout()
+        plt.grid(True)
+
+        # Save and close the plot
         plt.savefig(chart_path)
         plt.close()
 
-        print(f"✅ Chart saved at: {chart_path}")  # Debug
+        print(f"✅ Chart saved at: {chart_path}")
         return chart_filename
 
     except Exception as e:
