@@ -5,6 +5,10 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Contributors](https://img.shields.io/github/contributors/NikhilShimpy/analyze-data)
 ![Contributors](https://img.shields.io/github/contributors/Harsh147v/analyze-data)
+
+👥 Contributors
+Nikhil Shimpy – @NikhilShimpy
+Harsh Vardhan – @Harsh147v
 ---
 
 ## 🚀 Features
