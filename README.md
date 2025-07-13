@@ -8,8 +8,8 @@
 
 ## 👥 Contributors
 
-- [**Nikhil Shimpy**] – [@NikhilShimpy](https://github.com/NikhilShimpy)  
-- [**Harsh Vardhan**] – [@Harsh147v](https://github.com/Harsh147v)
+- **Nikhil Shimpy** – [@NikhilShimpy](https://github.com/NikhilShimpy)  
+- **Harsh Vardhan** – [@Harsh147v](https://github.com/Harsh147v)
  
 
 ---
