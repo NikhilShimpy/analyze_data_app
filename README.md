@@ -6,9 +6,11 @@
 ![Contributors](https://img.shields.io/github/contributors/NikhilShimpy/analyze-data)
 ![Contributors](https://img.shields.io/github/contributors/Harsh147v/analyze-data)
 
-👥 Contributors
-Nikhil Shimpy – @NikhilShimpy
-Harsh Vardhan – @Harsh147v
+## 👥 Contributors
+
+- [**Nikhil Shimpy**](https://github.com/NikhilShimpy) – [@NikhilShimpy](https://github.com/NikhilShimpy)  
+- [**Harsh Vardhan**](https://github.com/Harsh147v) – [@Harsh147v](https://github.com/Harsh147v)
+
 ---
 
 ## 🚀 Features
